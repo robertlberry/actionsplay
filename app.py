@@ -1,5 +1,6 @@
 from flask import render_template
 from flask import Flask
+from flask import make_response
 
 app = Flask(__name__)
 
@@ -7,9 +8,9 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/app')
-def blog():
-    return "Hello, from App path!"
+@app.route('/hello')
+def hello():
+    return "Hello World!"
 
 @app.route('/myname')
 def myname():
@@ -21,4 +22,4 @@ def default(page):
   return response
 
 if __name__ == '__main__':
-    app.run(threaded=True,host='0.0.0.0',port=3000)
+    app.run(threaded=True, debug=True)
