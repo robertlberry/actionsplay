@@ -10,6 +10,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-22.04
+    environment: DOCKER_USER
     steps:
       - uses: actions/checkout@v2
       - name: Login to Dockerhub
